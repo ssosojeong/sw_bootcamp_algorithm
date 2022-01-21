@@ -13,7 +13,7 @@ public class exam482 {
         String[] polars = new String[n];
         int[] cookies = new int[n];
 
-        //값 받으며 비교하기
+        //값 받으며 비교하기q
         int val = 0;
         int cnt = 0;
         String input;
