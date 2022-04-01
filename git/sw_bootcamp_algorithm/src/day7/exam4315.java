@@ -12,7 +12,6 @@ public class exam4315 {
     static int[] dx = {0,1,0,-1};
     static int[] dy = {-1,0,1,0};
 
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -21,6 +20,7 @@ public class exam4315 {
         M = Integer.parseInt(st.nextToken());
 
         cheese = new int[N][M];
+        visit = new boolean[N][M];
 
         for(int i=0; i<N; i++){
             st = new StringTokenizer(br.readLine()," ");
@@ -36,8 +36,10 @@ public class exam4315 {
             flag = false;
 
             //치즈 바깥 부분을 갱신
-            visit = new boolean[N][M];
-            searchOutside(0,0);
+            //visit = new boolean[N][M];
+            searchOutside(ans-1,ans-1);
+            printArr(visit);
+            System.out.println();
 
             //치즈가 있는 곳 찾고 녹이고
             for(int i=1; i<N-1; i++){
@@ -48,6 +50,8 @@ public class exam4315 {
                     }
                 }
             }
+            printArr(cheese);
+            System.out.println();
         }
         System.out.println(ans-1);
 
